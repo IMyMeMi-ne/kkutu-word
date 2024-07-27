@@ -6,8 +6,10 @@ export const StyleContainer = styled.div`
   align-items: center;
 `;
 
-export const HeadContainer = styled.div`
+export const StyleHeadContainer = styled.div`
   display: flex;
+  width: max-content;
+
   margin-left: 25rem;
   position: relative;
   margin-top: 1rem;
@@ -43,11 +45,33 @@ export const StyleDropdown = styled.ul`
   list-style-type: none;
 `;
 
+export const StyleKkutuButton = styled.a`
+  background-color: #d6a2e8;
+  display: flex;
+  border-radius: 8px;
+  width: 6.5rem;
+  height: 2.25rem;
+  color: white;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-shadow: 1px;
+  transition: transform 0 ease-in-out;
+  text-decoration: none;
+  margin-left: auto;
+  &:hover {
+    background-color: #f0b4f0;
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+`;
 const styles = {
   StyleFilterButton,
   StyleContainer,
-  HeadContainer,
+  StyleHeadContainer,
   StyleDropdown,
+  StyleKkutuButton,
 };
 
 export default styles;

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './styles';
 
-export default function Category() {
+export default function Header() {
   const categories = ['끝말잇기', '앞말잇기', '단어대결', '쿵쿵따'];
   const [categoryFilter, setCategoryFilter] = useState('끝말잇기');
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -33,7 +33,7 @@ export default function Category() {
 
   return (
     <styles.StyleContainer ref={dropdownRef}>
-      <styles.HeadContainer>
+      <styles.StyleHeadContainer>
         <styles.StyleFilterButton onClick={handleButtonClick}>
           {categoryFilter} ▼
         </styles.StyleFilterButton>
@@ -50,7 +50,14 @@ export default function Category() {
             ))}
           </styles.StyleDropdown>
         )}
-      </styles.HeadContainer>
+        <styles.StyleKkutuButton
+          href="https://kkutu.co.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          끄투 바로가기
+        </styles.StyleKkutuButton>
+      </styles.StyleHeadContainer>
     </styles.StyleContainer>
   );
 }

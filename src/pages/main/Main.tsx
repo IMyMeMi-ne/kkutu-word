@@ -1,5 +1,5 @@
-import Category from '../../components/category/Category';
+import Header from '../../components/header/Header';
 
 export default function Main() {
-  return <Category />;
+  return <Header />;
 }
