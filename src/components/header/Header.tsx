@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './styles';
+import search_icon from '/svg/search_icon.svg';
 
 export default function Header() {
   const categories = ['끝말잇기', '앞말잇기', '단어대결', '쿵쿵따'];
@@ -57,6 +58,8 @@ export default function Header() {
         >
           끄투 바로가기
         </styles.StyleKkutuButton>
+        <styles.StyleSearchInput type="text"></styles.StyleSearchInput>
+        <styles.StyleSearchIcon src={search_icon} alt="search_icon" />
       </styles.StyleHeadContainer>
     </styles.StyleContainer>
   );

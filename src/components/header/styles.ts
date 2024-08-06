@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const StyleContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 export const StyleHeadContainer = styled.div`
   display: flex;
   width: max-content;
-
   margin-left: 25rem;
   position: relative;
   margin-top: 1rem;
@@ -66,12 +65,33 @@ export const StyleKkutuButton = styled.a`
     transform: scale(1.02);
   }
 `;
+
+export const StyleSearchInput = styled.input`
+  display: flex;
+  width: 30rem;
+  margin-left: 2rem;
+  padding: 0.5rem;
+  &:focus {
+    outline: none;
+    background-color: white;
+  }
+`;
+
+export const StyleSearchIcon = styled.img`
+  margin-left: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
 const styles = {
   StyleFilterButton,
   StyleContainer,
   StyleHeadContainer,
   StyleDropdown,
   StyleKkutuButton,
+  StyleSearchInput,
+  StyleSearchIcon,
 };
 
 export default styles;
