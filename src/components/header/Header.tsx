@@ -7,6 +7,9 @@ export default function Header() {
   const [categoryFilter, setCategoryFilter] = useState('끝말잇기');
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isSearchInputClick, setIsSearchInputClick] = useState(false);
+  const [isMissionInputClick, setIsMissionIsInputClick] = useState(false);
+
   const handleButtonClick = () => {
     setDropdownVisible(!dropdownVisible);
   };
@@ -58,9 +61,25 @@ export default function Header() {
         >
           끄투 바로가기
         </styles.StyleKkutuButton>
-        <styles.StyleSearchInput type="text"></styles.StyleSearchInput>
+        <styles.StyleSearchInput
+          type="text"
+          placeholder={isSearchInputClick === true ? '' : '검색 단어'}
+          onFocus={() => setIsSearchInputClick(true)}
+          onBlur={() => {
+            setIsSearchInputClick(false);
+          }}
+        ></styles.StyleSearchInput>
+        <styles.StyleSearchInput
+          type="text"
+          placeholder={isMissionInputClick === true ? '' : '미션 글자'}
+          onFocus={() => setIsMissionIsInputClick(true)}
+          onBlur={() => {
+            setIsMissionIsInputClick(false);
+          }}
+        ></styles.StyleSearchInput>
         <styles.StyleSearchIcon src={search_icon} alt="search_icon" />
       </styles.StyleHeadContainer>
+      <styles.StyleHr />
     </styles.StyleContainer>
   );
 }

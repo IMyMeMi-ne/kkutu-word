@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const StyleContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 `;
 
 export const StyleHeadContainer = styled.div`
   display: flex;
-  width: max-content;
-  margin-left: 25rem;
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 export const StyleFilterButton = styled.button`
@@ -19,7 +19,7 @@ export const StyleFilterButton = styled.button`
   position: relative;
   display: flex;
   border-radius: 8px;
-  width: 6.25rem;
+  width: 6.5rem;
   height: 2.5rem;
   color: white;
   font-size: 1rem;
@@ -49,7 +49,7 @@ export const StyleKkutuButton = styled.a`
   display: flex;
   border-radius: 8px;
   width: 6.5rem;
-  height: 2.25rem;
+  height: 2.5rem;
   color: white;
   font-size: 1rem;
   align-items: center;
@@ -68,12 +68,19 @@ export const StyleKkutuButton = styled.a`
 
 export const StyleSearchInput = styled.input`
   display: flex;
-  width: 30rem;
-  margin-left: 2rem;
+  width: 10rem;
+  margin-left: 0.5rem;
   padding: 0.5rem;
+  color: white;
   &:focus {
     outline: none;
-    background-color: white;
+    background-color: gray;
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+  &::placeholder {
+    color: white;
   }
 `;
 
@@ -84,6 +91,13 @@ export const StyleSearchIcon = styled.img`
     transform: scale(1.1);
   }
 `;
+
+export const StyleHr = styled.hr`
+  display: flex;
+  width: 90%;
+  margin-top: 2rem;
+  border: 1px solid gray;
+`;
 const styles = {
   StyleFilterButton,
   StyleContainer,
@@ -92,6 +106,7 @@ const styles = {
   StyleKkutuButton,
   StyleSearchInput,
   StyleSearchIcon,
+  StyleHr,
 };
 
 export default styles;
