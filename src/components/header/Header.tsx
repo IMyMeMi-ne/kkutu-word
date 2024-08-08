@@ -1,59 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
 import styles from './styles';
-import search_icon from '/svg/search_icon.svg';
+import FilterDropdownButton from './_component/FilterDropdownButton';
+import SearchInput from './_component/SearchInput';
 
 export default function Header() {
-  const categories = ['끝말잇기', '앞말잇기', '단어대결', '쿵쿵따'];
-  const [categoryFilter, setCategoryFilter] = useState('끝말잇기');
-  const [dropdownVisible, setDropdownVisible] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isSearchInputClick, setIsSearchInputClick] = useState(false);
-  const [isMissionInputClick, setIsMissionIsInputClick] = useState(false);
-
-  const handleButtonClick = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
-
-  const handleCategorySelect = (category: string) => {
-    setCategoryFilter(category);
-    setDropdownVisible(false);
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
-      setDropdownVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   return (
-    <styles.StyleContainer ref={dropdownRef}>
+    <styles.StyleContainer>
       <styles.StyleHeadContainer>
-        <styles.StyleFilterButton onClick={handleButtonClick}>
-          {categoryFilter} ▼
-        </styles.StyleFilterButton>
-        {dropdownVisible && (
-          <styles.StyleDropdown>
-            {categories.map((category) => (
-              <li key={category}>
-                <styles.StyleFilterButton
-                  onClick={() => handleCategorySelect(category)}
-                >
-                  {category}
-                </styles.StyleFilterButton>
-              </li>
-            ))}
-          </styles.StyleDropdown>
-        )}
+        <FilterDropdownButton />
         <styles.StyleKkutuButton
           href="https://kkutu.co.kr/"
           target="_blank"
@@ -61,23 +14,7 @@ export default function Header() {
         >
           끄투 바로가기
         </styles.StyleKkutuButton>
-        <styles.StyleSearchInput
-          type="text"
-          placeholder={isSearchInputClick === true ? '' : '검색 단어'}
-          onFocus={() => setIsSearchInputClick(true)}
-          onBlur={() => {
-            setIsSearchInputClick(false);
-          }}
-        ></styles.StyleSearchInput>
-        <styles.StyleSearchInput
-          type="text"
-          placeholder={isMissionInputClick === true ? '' : '미션 글자'}
-          onFocus={() => setIsMissionIsInputClick(true)}
-          onBlur={() => {
-            setIsMissionIsInputClick(false);
-          }}
-        ></styles.StyleSearchInput>
-        <styles.StyleSearchIcon src={search_icon} alt="search_icon" />
+        <SearchInput />
       </styles.StyleHeadContainer>
       <styles.StyleHr />
     </styles.StyleContainer>

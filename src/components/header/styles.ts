@@ -66,6 +66,10 @@ export const StyleKkutuButton = styled.a`
   }
 `;
 
+export const StyleSearchInputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 export const StyleSearchInput = styled.input`
   display: flex;
   width: 10rem;
@@ -105,6 +109,7 @@ const styles = {
   StyleDropdown,
   StyleKkutuButton,
   StyleSearchInput,
+  StyleSearchInputContainer,
   StyleSearchIcon,
   StyleHr,
 };
